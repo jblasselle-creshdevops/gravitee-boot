@@ -122,7 +122,7 @@ curl -H "Authorization: Bearer :accessToken" \
 
 ![select domain](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_IO_SWITCH_DOMAINS_2020-04-14T15-56-13.767Z.png?inline=false)
 
-* Ensuite, il faut aller au menu "Clients" et créer le client avec la WebUI
+* Ensuite, il faut aller au menu "Clients" et créer le client avec la WebUI (je l'ai appelé `creshapi_client`)
 
 ![create client 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CRESH_API_CREATE_CLIENT_1_2020-04-14T16-06-27.507Z.png)
 
@@ -140,7 +140,21 @@ curl -H "Authorization: Bearer :accessToken" \
      http://GRAVITEEIO-AM-MGT-API-HOST/management/domains/:domainId/clients
 ```
 
-#### Test your application with OAuth2
+#### Maintenant Testons
+
+C'est de l'authentification application avec `OAuth2` :
+
+* on doit donc d'abord obtenir un token,
+* puis utiliser ce token pour consommer le endpoint gravitee que l'on vien de déclarer
+
+* obetnir le token :
+
+```bash
+export CLIENT_ID=creshAPI_ClientID_JBL
+export CLIENT_SECRET=p4nwLeKMPvF9mn15HYf9dm9wm8w
+
+curl -X POST \
+  'http://GRAVITEEIO-AM-GATEWAY-HOST/:securityDomainPath/oauth/token?grant_type=client_credentials&scope=read&client_id=:clientId&client_secret=:clientSecret'
 
 
 
