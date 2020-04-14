@@ -27,6 +27,7 @@ atom .
 ### Installation
 
 * https://docs.gravitee.io/apim/1.x/apim_installguide_docker_compose.html
+* https://docs.gravitee.io/am/2.x/am_installguide_docker.html#docker_compose
 * version : https://github.com/gravitee-io/gravitee-gateway/releases/tag/1.30.8
 
 
@@ -42,11 +43,11 @@ cd ~/.poc.graviteeio
 sudo sysctl -w vm.max_map_count=262144
 #
 
+# (Optional step: pull to ensure that you are running latest images)
 docker-compose pull
 
-docker-compose up -d
-
-docker-compose logs -f
+# And run...
+docker-compose up -d && docker-compose logs -f
 
 
 ```
