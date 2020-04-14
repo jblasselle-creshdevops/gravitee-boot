@@ -83,6 +83,7 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 
 ### Références de docuements étudiés
 
+* https://docs.gravitee.io/am/2.x/am_quickstart_register_app.html
 
 * https://medium.com/graviteeio/how-to-secure-an-api-with-graviteeio-api-platform-437cf2dc0699
 
