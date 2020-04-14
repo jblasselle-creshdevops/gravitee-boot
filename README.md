@@ -24,7 +24,19 @@ atom .
 
 
 
-### Installation
+## Installation
+
+### Methode 1 : one comamnd quick start
+
+
+```bash
+curl -L http://bit.ly/graviteeio-am | bash -s 8080
+```
+
+En partant de `master`, celui-là aussi je pense, présente le même bug que la méthode suivante
+
+
+### Methode 2 : Une installation testée qui donne un crash gravitee.io (buggé pas d'ouverture d'issue github pour l'instant)
 
 * https://docs.gravitee.io/apim/1.x/apim_installguide_docker_compose.html
 * https://docs.gravitee.io/am/2.x/am_installguide_docker.html#docker_compose
@@ -92,3 +104,53 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 </tr>
 </tbody>
 </table>
+
+# Préparattion Kong Au cas où
+
+https://dev.to/_mertsimsek/kong-microservices-api-gateway-with-docker-12g5
+
+
+### Recette rapide Kong
+
+
+* ccc :
+
+```bash
+# sur l'hôte de test local, disons qu'il ait le nom d'hôte réseau [pegasusio.io]
+git clone git@gitlab.com:bureau1/pulumi-workshops/poc-api-gateway/basic-api-kong.git
+cd basic-api-kong
+
+docker run -d --name king-kong -p 8000:8000 -p 8443:8443 -p 8001:8001 -p 8444:8444 cresh/king-kong:latest
+
+```
+
+
+source info pour améliorer cette recette : https://docs.konghq.com/install/docker/?_ga=2.253834817.893832238.1586863912-1018594552.1586863912&_gac=1.182739474.1586863939.EAIaIQobChMI143Q6ejn6AIVybvVCh1RfAJ9EAAYASAAEgJu2vD_BwE
+
+
+```bash
+
+$ curl -i http://pegasusio.io:8000
+HTTP/1.1 404 Not Found
+Date: Tue, 14 Apr 2020 11:55:11 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Content-Length: 48
+X-Kong-Response-Latency: 1
+Server: kong/2.0.3
+
+{"message":"no Route matched with those values"}
+```
+
+
+### Suite : https://docs.konghq.com/2.0.x/getting-started/quickstart/
+
+
+(Learn Kong)
+
+
+
+et le but final ce serait ça : (case créer  un API consumer pour ensuite derrière voir si on arrive à récupéere l'ID des  API consumers dans notre REST API )
+
+
+https://docs.konghq.com/2.0.x/getting-started/adding-consumers/
