@@ -291,6 +291,18 @@ jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVIT
 }jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$
 ```
 
+* On voit ci-dessus que le scope `read` n'existe pas : parce que la doc gravitee prend cela comme exemple, mais il n'existe pas par défaut.
+* Voici donc comment créer un scope customisé (c'est ce qui permet de définir les roles de la creshAPI, via le client) :
+  * d'abord, il faaut définir une _redirect_url_ pour notre client `creshapi`
+
+![creer scope custom , etape 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_1.png)
+
+![creer scope custom , etape 2](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_2.png)
+
+![creer scope custom , etape 3](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_3.png)
+
+
+
 
 ### Références de docuements étudiés
 
