@@ -142,6 +142,8 @@ curl -H "Authorization: Bearer :accessToken" \
 
 #### Maintenant Testons
 
+https://docs.gravitee.io/am/2.x/am_quickstart_register_app.html#test_your_application_with_oauth2
+
 C'est de l'authentification application avec `OAuth2` :
 
 * on doit donc d'abord obtenir un token,

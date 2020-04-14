@@ -1967,3 +1967,6 @@ Attaching to gio_am_nginx, gio_am_webui, gio_am_gateway, gio_am_management, gio_
 [33mgio_am_management |[0m 18:16:51.003 [graviteeam-listener-39] [] WARN  o.s.web.servlet.PageNotFound - No mapping for POST /admin/$CRESH_API_SECURTIY_DOMAIN/oauth/token
 [33mgio_am_management |[0m 18:17:18.841 [graviteeam-listener-66] [] WARN  o.s.web.servlet.PageNotFound - No mapping for POST /admin/$CRESH_API_SECURTIY_DOMAIN/oauth/token
 [35mgio_am_nginx  |[0m 172.18.0.1 - - [14/Apr/2020:18:17:18 +0000] "POST /am/admin/$CRESH_API_SECURTIY_DOMAIN/oauth/token?grant_type=client_credentials&scope=read&client_id=:$CLIENT_ID&client_secret=:$CLIENT_SECRET HTTP/1.1" 404 5 "-" "curl/7.52.1"
+[33mgio_am_management |[0m 18:18:50.968 [graviteeam-listener-40] [] WARN  o.s.web.servlet.PageNotFound - No mapping for POST /admin/$CRESH_API_SECURTIY_DOMAIN/oauth/token
+[35mgio_am_nginx  |[0m 172.18.0.1 - - [14/Apr/2020:18:18:50 +0000] "POST /am/admin/$CRESH_API_SECURTIY_DOMAIN/oauth/token?grant_type=client_credentials&scope=read&client_id=:$CLIENT_ID&client_secret=:$CLIENT_SECRET HTTP/1.1" 404 5 "-" "curl/7.52.1"
+[35mgio_am_nginx  |[0m 172.18.0.1 - - [14/Apr/2020:18:19:06 +0000] "POST /am/management/$CRESH_API_SECURTIY_DOMAIN/oauth/token?grant_type=client_credentials&scope=read&client_id=:$CLIENT_ID&client_secret=:$CLIENT_SECRET HTTP/1.1" 401 5 "-" "curl/7.52.1"
