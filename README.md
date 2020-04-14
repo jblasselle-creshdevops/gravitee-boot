@@ -1,7 +1,4 @@
-# poc-graviteeio
-
-
-
+# Poc Gravitee.io
 
 # Gravitee start
 
@@ -153,16 +150,16 @@ C'est de l'authentification application avec `OAuth2` :
 
 ```bash
 export CLIENT_ID=creshAPI_ClientID_JBL
-export CLIENT_SECRET=p4nwLeKMPvF9mn15HYf9dm9wm8w
+export CLIENT_SECRET=d8JKL9MX6d24xP376Y5q_SscLGs
 export GRAVITEE_HOST=localhost:8077
-export CRESH_API_SECURTIY_DOMAIN=creshdomain
+
+export GRAVITEE_HOST=apim.gravitee.io
+export GRAVITEE_HOST=am.gravitee.io
+
+export CRESH_API_SECURTIY_DOMAIN=creshdomaine
 
 curl -X POST \
-  'http://${GRAVITEE_HOST}/:${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-
-
-curl -X POST \
-  'http://${GRAVITEE_HOST}/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}'
+  "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
 
 
 ```
@@ -170,123 +167,6 @@ curl -X POST \
 * tests :
 
 ```bash
-~$ curl -X POST  -i -H "Accept: application/json"  'http://localhost:8077/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 16:38:28 GMT
-Content-Type: text/plain
-Content-Length: 43
-Connection: keep-alive
-X-Gravitee-Transaction-Id: 56c13e6c-adb9-4870-813e-6cadb9987094
-
-No security domain matches the request URI.
-```
-
-_Derniers résultats de tests_ :
-
-```bash
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json"  'http://apim.gravitee.io:8077/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:08:19 GMT
-Content-Type: text/html
-Content-Length: 153
-Connection: keep-alive
-
-<html>
-<head><title>404 Not Found</title></head>
-<body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx/1.16.1</center>
-</body>
-</html>
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json"  'http://apim.gravitee.io:8077/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:08:22 GMT
-Content-Type: text/plain
-Content-Length: 43
-Connection: keep-alive
-X-Gravitee-Transaction-Id: df4320e2-ef28-478b-8320-e2ef28678b4b
-
-No security domain matches the request URI.jbl@poste-devops-jbl-16gbram:~$
-jbl@poste-devops-jbl-16gbram:~$
-jbl@poste-devops-jbl-16gbram:~$ tail -n 5 /etc/hosts
-
-# ---
-#
-# Gravitee.io Cresh
-127.0.0.1    localhost apim.gravitee.io am.gravitee.io
-jbl@poste-devops-jbl-16gbram:~$
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i  'http://apim.gravitee.io:8077/am/management/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 401 Authentication Failed: No JWT token found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:14:52 GMT
-Content-Type: text/html;charset=iso-8859-1
-Content-Length: 0
-Connection: keep-alive
-X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
-Pragma: no-cache
-X-Frame-Options: DENY
-Cache-Control: must-revalidate,no-cache,no-store
-
-jbl@poste-devops-jbl-16gbram:~$
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://apim.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:17:18 GMT
-Transfer-Encoding: chunked
-Connection: keep-alive
-Cache-Control: must-revalidate,no-cache,no-store
-
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://apim.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:17:18 GMT
-Transfer-Encoding: chunked
-Connection: keep-alive
-Cache-Control: must-revalidate,no-cache,no-store
-
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:18:50 GMT
-Transfer-Encoding: chunked
-Connection: keep-alive
-Cache-Control: must-revalidate,no-cache,no-store
-
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://am.gravitee.io:8077/am/management/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 401 Authentication Failed: No JWT token found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:19:06 GMT
-Transfer-Encoding: chunked
-Connection: keep-alive
-X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
-Pragma: no-cache
-X-Frame-Options: DENY
-Cache-Control: must-revalidate,no-cache,no-store
-
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:25:51 GMT
-Transfer-Encoding: chunked
-Connection: keep-alive
-Cache-Control: must-revalidate,no-cache,no-store
-
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H 'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-curl: no URL specified!
-curl: try 'curl --help' or 'curl --manual' for more information
-jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i  'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
-HTTP/1.1 404 Not Found
-Server: nginx/1.16.1
-Date: Tue, 14 Apr 2020 18:26:22 GMT
-Content-Type: text/html;charset=iso-8859-1
-Content-Length: 0
-Connection: keep-alive
-Cache-Control: must-revalidate,no-cache,no-store
 
 jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i  'http://am.gravitee.io:8077/am/management/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
 HTTP/1.1 401 Authentication Failed: No JWT token found
@@ -304,6 +184,90 @@ Cache-Control: must-revalidate,no-cache,no-store
 jbl@poste-devops-jbl-16gbram:~$
 
 ```
+
+* Ok, malgré ces essais infructueux, on peut lire ceci, dans le docker-compose :
+
+```Yaml
+environment:
+  - MGMT_API_URL=http://localhost:${NGINX_PORT}/am
+  - MGMT_UI_URL=http://localhost:${NGINX_PORT}/am/ui
+```
+
+* donc, pour moi, j'ai bien le bon appel à faire lorsque je fait :
+
+```bash
+$ curl -X POST  -i  'http://localhost:8077/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:56:50 GMT
+Content-Type: text/plain
+Content-Length: 43
+Connection: keep-alive
+X-Gravitee-Transaction-Id: f98f6056-0055-4ff7-8f60-5600559ff722
+
+No security domain matches the request URI.
+```
+
+* Ah, ça y est (erreur bête de quotes) :
+
+```bash
+$ curl -X POST \
+>   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_client",
+  "error_description" : "Invalid client: client must at least have one grant type configured"
+}
+```
+
+* à partir de là, j'ai dépilé les erreurs suivantes , et les ait toutes résolues en changeant ou ajoutant un paramètre de configuration du client dans la Web UI :
+
+```bash
+
+jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_client",
+  "error_description" : "Invalid client: client must at least have one grant type configured"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$
+jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$
+jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_scope",
+  "error_description" : "Invalid scope(s): read"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_scope",
+  "error_description" : "Invalid scope(s): read"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_scope",
+  "error_description" : "Invalid scope(s): read"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=scim&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_scope",
+  "error_description" : "Invalid scope(s): scim"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=scim&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "access_token" : "eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJjcmVzaEFQSV9DbGllbnRJRF9KQkwiLCJhdWQiOiJjcmVzaEFQSV9DbGllbnRJRF9KQkwiLCJkb21haW4iOiJjcmVzaGRvbWFpbmUiLCJzY29wZSI6InNjaW0iLCJpc3MiOiJodHRwOi8vYW0uZ3Jhdml0ZWUuaW8vYW0vY3Jlc2hkb21haW5lL29pZGMiLCJleHAiOjE1ODY5MDAzMTgsImlhdCI6MTU4Njg5MzExOCwianRpIjoiM3o4TDdFeDVfM2VCVEhsY1VqdW5SeGQ3ckM4In0.mP2IX4KrUSDggjDCHqOMFtIIRa4NyE3fqpw5jXWGLbk",
+  "token_type" : "bearer",
+  "expires_in" : 7199,
+  "scope" : "scim"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$
+
+```
+
+* les conf du client dans la WebUI :
+
+  * Il faut "activer", mettre dans l'état "enabled", le client `creshapi_client` (bouton bleu un peu en haut à gauche dans le formulaire du client) :
+![client dans l'état "enabled"](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_CONFIG-CLIENT_ENABLED_2020-04-14T19-42-11.536Z.png?inline=false)
+
+  * Il faut "activer",  mettre dans l'état "enabled", au moins un Identity Provider, pour le client `creshapi_client`,  (Ici j'ai configuré le provider  par défaut, mais ce pourrait être `Keycloak`) :
+
+![client dans l'état "enabled"](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_IDENTITY_PROVIDER_ENABLED_2020-04-14T19-47-33.445Z.pngs?inline=false)
+
+  * Configuration d'un  `grant type` et d'au moins un `scope` (ci-dessous j'ai ajouté le scope `scim` et le scope `roles`) :
+![config `grant type` et d'au moins un `scope ](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_CONFIG-GRANT-TYPES_AND_SCOPES__2020-04-14T19-41-51.248Z.png?inline=false)
+
+
 
 ### Références de docuements étudiés
 
