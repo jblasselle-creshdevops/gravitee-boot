@@ -20,9 +20,17 @@ curl -L http://bit.ly/graviteeio-am | bash -s 8080
 * https://docs.gravitee.io/apim/1.x/apim_installguide_docker_compose.html
 * https://docs.gravitee.io/am/2.x/am_installguide_docker.html#docker_compose
 * version : https://github.com/gravitee-io/gravitee-gateway/releases/tag/1.30.8
+* Edit the `/etc/hosts` of the machine on which you will run the gravitee installation, and append to it the following  :
 
+```ini
+# ---
+#
+# Gravitee.io Cresh
+192.168.1.22    pegasusio.io apim.gravitee.io am.gravitee.io
 
-* run  :
+```
+
+* Now run :
 
 ```bash
 

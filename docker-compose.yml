@@ -77,7 +77,10 @@ services:
       - management
     environment:
       # https://github.com/gravitee-io/issues/issues/1694
-      - MGMT_API_URL=http://localhost:${NGINX_PORT}/am
-      - MGMT_UI_URL=http://localhost:${NGINX_PORT}/am/ui
+      # - MGMT_API_URL=http://localhost:${NGINX_PORT}/am
+      #
+      - MGMT_API_URL=http://am.gravitee.io:${NGINX_PORT}/am
+      # - MGMT_UI_URL=http://localhost:${NGINX_PORT}/am/ui
+      - MGMT_UI_URL=http://am.gravitee.io:${NGINX_PORT}/am/ui
     volumes:
       - ./logs/am-webui:/var/log/httpd
