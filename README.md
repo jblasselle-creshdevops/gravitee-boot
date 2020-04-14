@@ -230,6 +230,14 @@ X-Frame-Options: DENY
 Cache-Control: must-revalidate,no-cache,no-store
 
 jbl@poste-devops-jbl-16gbram:~$
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://apim.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:17:18 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: must-revalidate,no-cache,no-store
+
 
 ```
 
