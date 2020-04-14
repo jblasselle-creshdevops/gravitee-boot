@@ -152,10 +152,18 @@ C'est de l'authentification application avec `OAuth2` :
 ```bash
 export CLIENT_ID=creshAPI_ClientID_JBL
 export CLIENT_SECRET=p4nwLeKMPvF9mn15HYf9dm9wm8w
+export GRAVITEE_HOST=localhost:8077
+export CRESH_API_SECURTIY_DOMAIN=creshdomain
 
 curl -X POST \
-  'http://GRAVITEEIO-AM-GATEWAY-HOST/:securityDomainPath/oauth/token?grant_type=client_credentials&scope=read&client_id=:clientId&client_secret=:clientSecret'
+  'http://${GRAVITEE_HOST}/:${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
 
+
+curl -X POST \
+  'http://${GRAVITEE_HOST}/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}'
+
+
+```
 
 
 ### Références de docuements étudiés
