@@ -147,7 +147,7 @@ C'est de l'authentification application avec `OAuth2` :
 * on doit donc d'abord obtenir un token,
 * puis utiliser ce token pour consommer le endpoint gravitee que l'on vien de déclarer
 
-* obetnir le token :
+* Obtenir le token :
 
 ```bash
 export CLIENT_ID=creshAPI_ClientID_JBL
