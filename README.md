@@ -180,6 +180,43 @@ X-Gravitee-Transaction-Id: 56c13e6c-adb9-4870-813e-6cadb9987094
 No security domain matches the request URI.
 ```
 
+_Derniers résultats de tests_ :
+
+```bash
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json"  'http://apim.gravitee.io:8077/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:08:19 GMT
+Content-Type: text/html
+Content-Length: 153
+Connection: keep-alive
+
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx/1.16.1</center>
+</body>
+</html>
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json"  'http://apim.gravitee.io:8077/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:08:22 GMT
+Content-Type: text/plain
+Content-Length: 43
+Connection: keep-alive
+X-Gravitee-Transaction-Id: df4320e2-ef28-478b-8320-e2ef28678b4b
+
+No security domain matches the request URI.jbl@poste-devops-jbl-16gbram:~$
+jbl@poste-devops-jbl-16gbram:~$
+jbl@poste-devops-jbl-16gbram:~$ tail -n 5 /etc/hosts
+
+# ---
+#
+# Gravitee.io Cresh
+127.0.0.1    localhost apim.gravitee.io am.gravitee.io
+jbl@poste-devops-jbl-16gbram:~$
+```
 
 ### Références de docuements étudiés
 
