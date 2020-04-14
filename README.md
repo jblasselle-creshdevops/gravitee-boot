@@ -30,7 +30,7 @@ atom .
 * version : https://github.com/gravitee-io/gravitee-gateway/releases/tag/1.30.8
 
 
-* run :
+* run  :
 
 ```bash
 
@@ -38,7 +38,9 @@ URI_GIT=git@gitlab.com:bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio.g
 git clone $URI_GIT ~/.poc.graviteeio
 cd ~/.poc.graviteeio
 
-
+# pour elastic search
+sudo sysctl -w vm.max_map_count=262144
+#
 
 docker-compose pull
 
