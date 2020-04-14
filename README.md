@@ -56,7 +56,7 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 
 
 
-* ajouter la ligne suivante dans le `/etc/hosts`
+* ajouter la ligne suivante dans le `/etc/hosts` :
 
 ```bash
 # --- #
@@ -64,7 +64,10 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 
 ````
 
-
+* faire le premier login avec :
+  * le username `admin`
+  * le mot de passe `adminadmin`
+* https://docs.gravitee.io/am/2.x/am_userguide_authentication.html
 
 ### Références de docuements étudiés
 
