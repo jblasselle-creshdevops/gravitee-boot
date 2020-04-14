@@ -165,6 +165,21 @@ curl -X POST \
 
 ```
 
+* tests :
+
+```bash
+~$ curl -X POST  -i -H "Accept: application/json"  'http://localhost:8077/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 16:38:28 GMT
+Content-Type: text/plain
+Content-Length: 43
+Connection: keep-alive
+X-Gravitee-Transaction-Id: 56c13e6c-adb9-4870-813e-6cadb9987094
+
+No security domain matches the request URI.
+```
+
 
 ### Références de docuements étudiés
 
@@ -276,3 +291,14 @@ git add --all && git commit -m "$COMMIT_MESSAGE" && git push -u origin master
 atom .
 
 ```
+
+
+# Questions
+
+### De l'expiration des secrets
+
+* Comment est gérée l'expiration des token ? automatique ? Ou changement de secret
+* Quelle est la technique utilisée par `Kong` ou par `Gravitee.io`.
+
+
+Encore demain 15/04/2020 des tests avant de sstatuer sur le choix entre gravitee.io et `Kong`
