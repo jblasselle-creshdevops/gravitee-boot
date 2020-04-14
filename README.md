@@ -55,6 +55,21 @@ export DWNLOAD_URI=https://raw.githubusercontent.com/gravitee-io/gravitee-docker
 curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/apim/1.x/docker-compose.yml -o "docker-compose.yml"
 ```
 
+### Methode 3 : trouver un exemple qui marche sur gtihub
+
+#### Test 1
+
+* https://medium.com/graviteeio/how-to-secure-an-api-with-graviteeio-api-platform-437cf2dc0699
+
+```bash
+# --- #
+
+
+````
+
+
+
+### ANNEXE données techniques Gravitee.io
 
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -88,7 +103,8 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 </tbody>
 </table>
 
-# Préparattion Kong Au cas où
+
+# Kong
 
 https://dev.to/_mertsimsek/kong-microservices-api-gateway-with-docker-12g5
 
