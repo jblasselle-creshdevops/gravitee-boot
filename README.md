@@ -216,6 +216,21 @@ jbl@poste-devops-jbl-16gbram:~$ tail -n 5 /etc/hosts
 # Gravitee.io Cresh
 127.0.0.1    localhost apim.gravitee.io am.gravitee.io
 jbl@poste-devops-jbl-16gbram:~$
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i  'http://apim.gravitee.io:8077/am/management/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 401 Authentication Failed: No JWT token found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:14:52 GMT
+Content-Type: text/html;charset=iso-8859-1
+Content-Length: 0
+Connection: keep-alive
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Pragma: no-cache
+X-Frame-Options: DENY
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$
+
 ```
 
 ### Références de docuements étudiés
