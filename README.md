@@ -110,7 +110,19 @@ curl -H "Authorization: Bearer :accessToken" \
 #### Create your client
 
 
+>
+> Before interact with the AM Authorization Gateway, you must create a client. The client represents your application and will give you the necessary information (like the **client ID/client Secret**) **for sign-in**, authorization, authentication and identity management.
+>
 
+>
+> The application **can be** a native **mobile app**, a **single page front-end web app**, or a **regular web app** that executes on a server.
+>
+
+* D'abord, il faut "se positionner" sur le domaine de sécurité qui vient d'être définit (`creshdomain` pour mon exemple) :
+
+![select domain](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_IO_SWITCH_DOMAINS_2020-04-14T15-56-13.767Z.png?inline=false)
+
+* ensuite, il faut aller au menu "Clients" et créer le client avec la WebUI
 
 #### Test your application with OAuth2
 
