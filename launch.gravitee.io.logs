@@ -865,3 +865,7 @@ Attaching to gio_am_nginx, gio_am_webui, gio_am_management, gio_am_gateway, gio_
 [32mgio_am_mongodb |[0m 2020-04-14T23:27:10.099+0000 I NETWORK  [thread1] connection accepted from 172.24.0.3:43550 #33 (31 connections now open)
 [32mgio_am_mongodb |[0m 2020-04-14T23:27:10.100+0000 I NETWORK  [conn33] received client metadata from 172.24.0.3:43550 conn33: { driver: { name: "mongo-java-driver|async|mongo-java-driver-reactivestreams", version: "3.12.0|1.13.0" }, os: { type: "Linux", name: "Linux", architecture: "amd64", version: "4.9.0-7-amd64" }, platform: "Java/Oracle Corporation/1.8.0_181-b13" }
 [36mgio_am_gateway |[0m 23:27:10.102 [Thread-16] [] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:9, serverValue:33}] to mongodb:27017
+[35mgio_am_nginx  |[0m 2020/04/14 23:28:02 [error] 9#9: *1 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.24.0.1, server: , request: "GET / HTTP/1.1", host: "apim.gravitee.io:8077"
+[35mgio_am_nginx  |[0m 172.24.0.1 - - [14/Apr/2020:23:28:02 +0000] "GET / HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 2020/04/14 23:28:06 [error] 9#9: *1 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.24.0.1, server: , request: "GET / HTTP/1.1", host: "apim.gravitee.io:8077"
+[35mgio_am_nginx  |[0m 172.24.0.1 - - [14/Apr/2020:23:28:06 +0000] "GET / HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
