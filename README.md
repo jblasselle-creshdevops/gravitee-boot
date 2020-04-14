@@ -240,6 +240,68 @@ Transfer-Encoding: chunked
 Connection: keep-alive
 Cache-Control: must-revalidate,no-cache,no-store
 
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://apim.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:17:18 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:18:50 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://am.gravitee.io:8077/am/management/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 401 Authentication Failed: No JWT token found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:19:06 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Pragma: no-cache
+X-Frame-Options: DENY
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H "Accept: application/json" 'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:25:51 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i -H 'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+curl: no URL specified!
+curl: try 'curl --help' or 'curl --manual' for more information
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i  'http://am.gravitee.io:8077/am/admin/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 404 Not Found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:26:22 GMT
+Content-Type: text/html;charset=iso-8859-1
+Content-Length: 0
+Connection: keep-alive
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$ curl -X POST  -i  'http://am.gravitee.io:8077/am/management/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=:${CLIENT_ID}&client_secret=:${CLIENT_SECRET}'
+HTTP/1.1 401 Authentication Failed: No JWT token found
+Server: nginx/1.16.1
+Date: Tue, 14 Apr 2020 18:41:46 GMT
+Content-Type: text/html;charset=iso-8859-1
+Content-Length: 0
+Connection: keep-alive
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Pragma: no-cache
+X-Frame-Options: DENY
+Cache-Control: must-revalidate,no-cache,no-store
+
+jbl@poste-devops-jbl-16gbram:~$
 
 ```
 
