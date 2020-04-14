@@ -87,7 +87,7 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 
 * Last step, enable your domain by clicking on the banner click here link. (une notification dans la WebUI)
 
-_Même action avec les API token_
+_**Même action avec les API token Gravitee**_
 
 ```bash
 # create domain
@@ -122,7 +122,21 @@ curl -H "Authorization: Bearer :accessToken" \
 
 ![select domain](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_IO_SWITCH_DOMAINS_2020-04-14T15-56-13.767Z.png?inline=false)
 
-* ensuite, il faut aller au menu "Clients" et créer le client avec la WebUI
+* Ensuite, il faut aller au menu "Clients" et créer le client avec la WebUI
+
+![create client 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CRESH_API_CREATE_CLIENT_1_2020-04-14T16-06-27.507Z.png)
+
+![create client 2](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CRESH_API_CREATE_CLIENT_2_2020-04-14T16-06-42.511Z.png)
+
+_**Même action avec les API token Gravitee**_
+
+```bash
+curl -H "Authorization: Bearer :accessToken" \
+     -H "Content-Type:application/json;charset=UTF-8" \
+     -X POST \
+     -d '{"clientId":"THE-CLIENT-ID"}' \
+     http://GRAVITEEIO-AM-MGT-API-HOST/management/domains/:domainId/clients
+```
 
 #### Test your application with OAuth2
 
