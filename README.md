@@ -446,6 +446,12 @@ atom .
 
 ```
 
+* cycle :
+
+```bash
+docker-compose down --rmi all && docker system prune -f --all && docker system prune -f --volumes && docker-compose pull && docker-compose up -d && docker-compose logs -f | tee launch.gravitee.io.logs
+```
+
 
 # Questions
 

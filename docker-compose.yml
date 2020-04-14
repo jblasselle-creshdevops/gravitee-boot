@@ -79,7 +79,9 @@ services:
       # https://github.com/gravitee-io/issues/issues/1694
       # - MGMT_API_URL=http://localhost:${NGINX_PORT}/am
       #
-      - MGMT_API_URL=http://am.gravitee.io:${NGINX_PORT}/am
+      # - MGMT_API_URL=http://am.gravitee.io:${NGINX_PORT}/am
+      # - MGMT_API_URL=http://apim.gravitee.io:8077/portal
+      - MGMT_API_URL=http://apim.gravitee.io:8077/
       # - MGMT_UI_URL=http://localhost:${NGINX_PORT}/am/ui
       - MGMT_UI_URL=http://am.gravitee.io:${NGINX_PORT}/am/ui
     volumes:
