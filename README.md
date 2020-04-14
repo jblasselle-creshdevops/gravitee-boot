@@ -141,12 +141,23 @@ curl -H "Authorization: Bearer :accessToken" \
 
 https://docs.gravitee.io/am/2.x/am_quickstart_register_app.html#test_your_application_with_oauth2
 
-C'est de l'authentification application avec `OAuth2` :
+Le test proposé par la doc consuste à tester l'authentification application avec `OAuth2`
 
-* on doit donc d'abord obtenir un token,
+* Dans le process d'authentification OAuth2, comme la Docker Auth v2, on doit donc d'abord obtenir un token,
 * puis utiliser ce token pour consommer le endpoint gravitee que l'on vien de déclarer
 
-* Obtenir le token :
+* Voici comment Obtenir le token OAuth2 :
+  * d'abord, il faut définir une _redirect_url_ pour l'authentification OAuth2 à notre client `creshapi` :
+
+![definir redirect_uri, etape 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CLIENT_REDIRECT_URI_FOR_OAUTH2.png?inline=false)
+
+  * ensuite, il faut activer le identity provider par défault:
+  * puis, configurer l'authentification Oauth2 du client en créer un scope (ci-dessous le scope `lecture`) :
+
+
+![config minimale OAuth2 client](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CLIENT_CONFIG_CLIENT_MINIMALE_OAUTH2.png?inline=false)
+
+
 
 ```bash
 export CLIENT_ID=creshAPI_ClientID_JBL
@@ -157,6 +168,7 @@ export GRAVITEE_HOST=apim.gravitee.io
 export GRAVITEE_HOST=am.gravitee.io
 
 export CRESH_API_SECURTIY_DOMAIN=creshdomaine
+export CRESH_API_GRAVITEE_CLIENT_SCOPE=lecture
 
 curl -X POST \
   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTIY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
@@ -293,13 +305,13 @@ jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVIT
 
 * On voit ci-dessus que le scope `read` n'existe pas : parce que la doc gravitee prend cela comme exemple, mais il n'existe pas par défaut.
 * Voici donc comment créer un scope customisé (c'est ce qui permet de définir les roles de la creshAPI, via le client) :
-  * d'abord, il faaut définir une _redirect_url_ pour notre client `creshapi`
 
-![creer scope custom , etape 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_1.png)
 
-![creer scope custom , etape 2](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_2.png)
+![creer scope custom , etape 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_1.png?inline=false)
 
-![creer scope custom , etape 3](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_3.png)
+![creer scope custom , etape 2](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_2.png?inline=false)
+
+![creer scope custom , etape 3](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_3.png?inline=false)
 
 
 
