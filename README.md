@@ -75,7 +75,42 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 
 #### Create a security domain
 
+>
+>  security domain is a series of security policies apply to a set of applications that all share common security mechanisms for authentication, authorization and identity management.
+>
+
+* From the homepage, go to user menu (top right) and click Global settings
+
+* From the domains page, click (+) button
+
+* Give your security domain a name, a description and press SAVE
+
+* Last step, enable your domain by clicking on the banner click here link. (une notification dans la WebUI)
+
+_Même action avec les API token_
+
+```bash
+# create domain
+curl -H "Authorization: Bearer :accessToken" \
+     -H "Content-Type:application/json;charset=UTF-8" \
+     -X POST \
+     -d '{"name":"My First Security Domain","description":"My First Security Domain description"}' \
+     http://GRAVITEEIO-AM-MGT-API-HOST/management/domains
+
+
+# enable domain
+curl -H "Authorization: Bearer :accessToken" \
+     -H "Content-Type:application/json;charset=UTF-8" \
+     -X PUT \
+     -d '{"name":"My First Security Domain","description":"My First Security Domain description", enabled: true}' \
+     http://GRAVITEEIO-AM-MGT-API-HOST/management/domains/:domainId
+```
+
+
 #### Create your client
+
+
+
 
 #### Test your application with OAuth2
 
