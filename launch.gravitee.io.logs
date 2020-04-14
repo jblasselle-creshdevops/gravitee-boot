@@ -949,3 +949,11 @@ Attaching to gio_am_nginx, gio_am_webui, gio_am_gateway, gio_am_management, gio_
 [33mgio_am_management |[0m 23:02:37.824 [graviteeam-listener-32] [] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/
 [35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:02:37 +0000] "GET /am/admin/ HTTP/1.1" 404 0 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
 [35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:02:56 +0000] "GET /am/management/ HTTP/1.1" 404 50 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 2020/04/14 23:03:57 [error] 6#6: *82 open() "/etc/nginx/html/portal" failed (2: No such file or directory), client: 172.22.0.1, server: , request: "GET /portal HTTP/1.1", host: "am.gravitee.io:8077"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:03:57 +0000] "GET /portal HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:04:06 +0000] "GET /am/portal HTTP/1.1" 404 43 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:04:18 +0000] "GET /am/management/ HTTP/1.1" 404 50 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:04:22 +0000] "GET /am/management/apis HTTP/1.1" 404 50 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:04:27 +0000] "GET /am/management/api HTTP/1.1" 404 50 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:04:33 +0000] "GET /am/management/health HTTP/1.1" 404 50 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+[35mgio_am_nginx  |[0m 172.22.0.1 - - [14/Apr/2020:23:04:45 +0000] "GET /am/ HTTP/1.1" 404 43 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"

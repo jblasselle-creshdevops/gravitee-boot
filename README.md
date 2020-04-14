@@ -322,6 +322,7 @@ jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVIT
 ![creer scope custom , etape 3](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_3.png?inline=false)
 
 * j'ai une issue très proche de la mienne (ne pas arriver à la webui du management des API, pour créer des API) : https://github.com/gravitee-io/issues/issues/1694
+* j'ai la suite à : https://docs.gravitee.io/am/2.x/am_quickstart_register_app.html
 
 _**Conclusion Premier test**_
 
