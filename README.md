@@ -314,9 +314,18 @@ jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVIT
 ![creer scope custom , etape 3](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_DOMAIN_SCOPES_3.png?inline=false)
 
 
+_**Conclusion Premier test**_
+
+Ok, le test que nous venons de faire consiste à configurer l'accès et la méthode d'authentification à l'API cresh, avec le protocole `OAuth2`, avec le  _default Identity Provider_.
+
+Pour OpenID Connect avec Keycloak, il faudra créer un nouveau identity provider dans gravitee, de type `OpenID Connect (OIDC)`, et le formulaire nous demandera les infos suivantes (hostname no de ports, client Id lcient secret etc...):
 
 
-### Références de docuements étudiés
+![keycloak integ.](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_IO_ADD_IDENTITY_PROVIDER_KEYCLOAK.png)
+
+
+
+### Références de documents étudiés
 
 * https://docs.gravitee.io/am/2.x/am_quickstart_register_app.html
 
