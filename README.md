@@ -267,6 +267,29 @@ jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVIT
   * Configuration d'un  `grant type` et d'au moins un `scope` (ci-dessous j'ai ajouté le scope `scim` et le scope `roles`) :
 ![config `grant type` et d'au moins un `scope ](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_CONFIG-GRANT-TYPES_AND_SCOPES.png?inline=false)
 
+ci-dessus, on voit, et c'est important :
+* que j'ai configuré 2 _**scopes**_, au sens de gravitee, pour ce client creshapi : `scim` et `roles`
+* et en conséquance, la requête à envoyer pour obtenir un `token` est à modifier en utilisant le paramètre `&scope=${VALEUR_DE_MON_SCOPE}` (`${VALEUR_DE_MON_SCOPE}` devra donc ici être d'une des deux valeurs `scim` ou `roles` ) :
+
+```bash
+jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=scim&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "access_token" : "eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJjcmVzaEFQSV9DbGllbnRJRF9KQkwiLCJhdWQiOiJjcmVzaEFQSV9DbGllbnRJRF9KQkwiLCJkb21haW4iOiJjcmVzaGRvbWFpbmUiLCJzY29wZSI6InNjaW0iLCJpc3MiOiJodHRwOi8vYW0uZ3Jhdml0ZWUuaW8vYW0vY3Jlc2hkb21haW5lL29pZGMiLCJleHAiOjE1ODY5MDAzMTgsImlhdCI6MTU4Njg5MzExOCwianRpIjoiM3o4TDdFeDVfM2VCVEhsY1VqdW5SeGQ3ckM4In0.mP2IX4KrUSDggjDCHqOMFtIIRa4NyE3fqpw5jXWGLbk",
+  "token_type" : "bearer",
+  "expires_in" : 7199,
+  "scope" : "scim"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=read&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "error" : "invalid_scope",
+  "error_description" : "Invalid scope(s): read"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVITEE_HOST}/am/${CRESH_API_SECURTY_DOMAIN}/oauth/token?grant_type=client_credentials&scope=roles&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
+{
+  "access_token" : "eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJjcmVzaEFQSV9DbGllbnRJRF9KQkwiLCJhdWQiOiJjcmVzaEFQSV9DbGllbnRJRF9KQkwiLCJkb21haW4iOiJjcmVzaGRvbWFpbmUiLCJzY29wZSI6InJvbGVzIiwiaXNzIjoiaHR0cDovL2FtLmdyYXZpdGVlLmlvL2FtL2NyZXNoZG9tYWluZS9vaWRjIiwiZXhwIjoxNTg2OTAxNDk0LCJpYXQiOjE1ODY4OTQyOTQsImp0aSI6IkI5Yk4teC1Wb21iS3hSRUYzU1JHR09oZDhjOCJ9.Wg_kvSDNrx9CrFj4CliUVGWBoek5AaF5WaK9z9kZXmQ",
+  "token_type" : "bearer",
+  "expires_in" : 7199,
+  "scope" : "roles"
+}jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$
+```
 
 
 ### Références de docuements étudiés
