@@ -63,11 +63,13 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 127.0.0.1       localhost apim.gravitee.io am.gravitee.io
 
 ````
-
+* accéder à gravitee.io avec http://localhost:8077/am/ui (poru l(instant je n'arrive pas à modifier la configuration popur l'accès externe)
 * faire le premier login avec :
   * le username `admin`
   * le mot de passe `adminadmin`
 * https://docs.gravitee.io/am/2.x/am_userguide_authentication.html
+*
+
 
 ### Références de docuements étudiés
 
