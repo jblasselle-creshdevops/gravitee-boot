@@ -126,6 +126,8 @@ curl -H "Authorization: Bearer :accessToken" \
 
 ![create client 1](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CRESH_API_CREATE_CLIENT_1_2020-04-14T16-06-27.507Z.png)
 
+* From the resulting OAuth client create form, you can copy the Client ID and the Client Secret to start interacting with Gravitee.io AM endpoints and APIs :
+
 ![create client 2](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/GRAVITEE_CRESH_API_CREATE_CLIENT_2_2020-04-14T16-06-42.511Z.png)
 
 _**Même action avec les API token Gravitee**_
