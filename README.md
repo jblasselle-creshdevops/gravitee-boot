@@ -16,7 +16,6 @@
 curl -L http://bit.ly/graviteeio-am | bash -s 8080
 ```
 
-En partant de `master`, celui-là aussi je pense, présente le même bug que la méthode suivante
 
 
 ### Methode 2 : Une installation testée qui donne un crash gravitee.io (buggé pas d'ouverture d'issue github pour l'instant)
@@ -55,19 +54,22 @@ export DWNLOAD_URI=https://raw.githubusercontent.com/gravitee-io/gravitee-docker
 curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/apim/1.x/docker-compose.yml -o "docker-compose.yml"
 ```
 
-### Methode 3 : trouver un exemple qui marche sur gtihub
 
-#### Test 1
 
-* https://medium.com/graviteeio/how-to-secure-an-api-with-graviteeio-api-platform-437cf2dc0699
+* ajouter la ligne suivante dans le `/etc/hosts`
 
 ```bash
 # --- #
-
+127.0.0.1       localhost apim.gravitee.io am.gravitee.io
 
 ````
 
 
+
+### Références de docuements étudiés
+
+
+* https://medium.com/graviteeio/how-to-secure-an-api-with-graviteeio-api-platform-437cf2dc0699
 
 ### ANNEXE données techniques Gravitee.io
 
