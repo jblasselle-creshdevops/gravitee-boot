@@ -76,6 +76,7 @@ services:
     depends_on:
       - management
     environment:
+      # https://github.com/gravitee-io/issues/issues/1694
       - MGMT_API_URL=http://localhost:${NGINX_PORT}/am
       - MGMT_UI_URL=http://localhost:${NGINX_PORT}/am/ui
     volumes:
