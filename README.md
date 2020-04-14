@@ -265,7 +265,7 @@ jbl@poste-devops-jbl-16gbram:~/vite.gravitee.io$ curl -X POST   "http://${GRAVIT
 ![client dans l'état "enabled"](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_IDENTITY_PROVIDER_ENABLED_2020-04-14T19-47-33.445Z.pngs?inline=false)
 
   * Configuration d'un  `grant type` et d'au moins un `scope` (ci-dessous j'ai ajouté le scope `scim` et le scope `roles`) :
-![config `grant type` et d'au moins un `scope ](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_CONFIG-GRANT-TYPES_AND_SCOPES__2020-04-14T19-41-51.248Z.png?inline=false)
+![config `grant type` et d'au moins un `scope ](https://gitlab.com/bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio/-/raw/master/documentation/images/api-mgmt/CRESH_API_CLIENT_CONFIG-GRANT-TYPES_AND_SCOPES.png?inline=false)
 
 
 
