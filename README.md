@@ -34,13 +34,10 @@ curl -L http://bit.ly/graviteeio-am | bash -s 8080
 
 ```bash
 
-URI_GIT=git@gitlab.com:bureau1/pulumi-workshops/poc-api-gateway/poc-graviteeio.git
+URI_GIT=https://github.com/jblasselle-creshdevops/gravitee-boot.git
 git clone $URI_GIT ~/.poc.graviteeio
 cd ~/.poc.graviteeio
 
-# pour elastic search
-sudo sysctl -w vm.max_map_count=262144
-#
 
 # (Optional step: pull to ensure that you are running latest images)
 docker-compose pull
@@ -61,14 +58,14 @@ curl -L https://raw.githubusercontent.com/gravitee-io/gravitee-docker/master/api
 
 
 
-* ajouter la ligne suivante dans le `/etc/hosts` :
+* ajouter la ligne suivante dans le (append this to ) `/etc/hosts` :
 
 ```bash
 # --- #
 127.0.0.1       localhost apim.gravitee.io am.gravitee.io
 
 ````
-* accéder à gravitee.io avec http://localhost:8077/am/ui (poru l(instant je n'arrive pas à modifier la configuration popur l'accès externe)
+* accéder à gravitee.io avec http://am.gravitee.io:8077/am/ui (poru l(instant je n'arrive pas à modifier la configuration popur l'accès externe)
 * faire le premier login avec :
   * le username `admin`
   * le mot de passe `adminadmin`
