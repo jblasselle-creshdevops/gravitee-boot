@@ -472,3 +472,4 @@ Encore demain 15/04/2020 des tests avant de sstatuer sur le choix entre gravitee
   * partie 2 : https://medium.com/graviteeio/how-to-secure-an-api-with-graviteeio-api-platform-437cf2dc0699
 
 * un nouvel essai pour aller plus loin et arriver à accéder à la gestion d'API : https://github.com/DamienFremont/gravitee-keycloak-starter
+* exemples de `gravitee.yml` config : https://github.com/cloudseals/gravitee-config-file/blob/master/gravitee.yml
