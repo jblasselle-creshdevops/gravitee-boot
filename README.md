@@ -26,7 +26,7 @@ curl -L http://bit.ly/graviteeio-am | bash -s 8080
 # ---
 #
 # Gravitee.io Cresh
-192.168.1.22    pegasusio.io apim.gravitee.io am.gravitee.io
+127.0.0.1    localhost apim.gravitee.io am.gravitee.io
 
 ```
 
