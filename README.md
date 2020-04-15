@@ -473,4 +473,5 @@ Encore demain 15/04/2020 des tests avant de sstatuer sur le choix entre gravitee
 
 * un nouvel essai pour aller plus loin et arriver à accéder à la gestion d'API : https://github.com/DamienFremont/gravitee-keycloak-starter
 * exemples de `gravitee.yml` config : https://github.com/cloudseals/gravitee-config-file/blob/master/gravitee.yml
+* issue très proche : https://github.com/gravitee-io/issues/issues/1394
 * dernière idée : retirer la cors conf ds le `nginx.conf`.
